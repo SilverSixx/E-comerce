@@ -1,4 +1,3 @@
-# E-comerce
 # Overview
 This project is an Ecommerce website that sells a variety of tech products, including laptops, desktops. The website is built using HTML, CSS, JavaScript, and Java.
 
