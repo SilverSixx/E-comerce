@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+@import url('https://fonts.googleapis.com/css?family=Baloo+Chettan&display=swap');
+
+.header-top {
+    background-repeat: no-repeat;
+}
+
+.header{
+    width: 100%;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 3%;
+}
+
+.right-section, .left-section{
+    padding-left: 6%;
+    padding-right: 6%;
+    display: flex;
+    align-items: center;
+}
+.left-section{
+    display: flex;
+    align-items:center;
+}
+.right-section{
+    width: 40%;
+    display:flex;
+    justify-content:space-between;
+}
+.right-section a{
+    text-decoration: none;
+    color: black;
+}
+.left-section img{
+    width: 45px;
+}
+.left-section a {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+}
+.tooltip:hover{
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.tooltip, .sign-in{
+    font-weight: bold;
+    font-size: 18px;
+}
+.sign-in{
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    background-color:#776BCC;
+    width:140%;
+    font-size: 100%;
+}
+.sign-in:hover{
+    opacity: 0.8;
+}
+
+/*this is from bootstrap*/
+.top-bg{
+    width:100%;
+}
+.top-row{
+    display:-ms-flexbox;
+    display:flex;
+    -ms-flex-wrap:wrap;
+    flex-wrap:wrap;
+}
+.brief-description-container{
+    -ms-flex:0 0 35%;
+    flex:0 0 35%;
+    max-width:35%;
+}
+
+.top-img-container{
+    -ms-flex:0 0 65%;
+    flex:0 0 65%;
+    max-width:65%;
+}
+
+/*this is from bootstrap*/
+
+.text-bg {
+    text-align: left;
+    max-width: 60%;
+    width: 100%;
+    float: left;
+    padding-top: 40%;
+    padding-bottom: 6%;
+    padding-left: 17.142%;
+}
+
+.text-bg h1 {
+    color: #2d2c2c;
+    font-size: 67px;
+    line-height: 90px;
+    font-weight: bolder;
+}
+
+.text-bg a {
+    font-size: 120%;
+    background-color: #2d2c2c;
+    color: #fff;
+    padding: 4% 1%;
+    width: 100%;
+    max-width: 35%;
+    text-align: center;
+    display: inline-block;
+    transition: ease-in all 0.5s;
+    border-radius: 15px;
+}
+
+.text-bg a:hover {
+    background-color: #776BCC;
+    color: #fff;
+    transition: ease-in all 0.5s;
+    border-radius: 26px;
+}
+
+.text-img {
+    height: 750px;
+    background: linear-gradient(#C7C5F4, #776BCC);
+    border-radius: 35% 0 0 35%;
+    padding-top: 13%;
+    padding-left: 10%;
+}
+.text-img figure {
+    margin: 0;
+}
+
+.text-img figure img {
+    width: 100%;
+}
+
+
