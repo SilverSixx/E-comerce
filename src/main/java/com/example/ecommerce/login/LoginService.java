@@ -14,17 +14,20 @@ import java.util.Optional;
 public class LoginService {
     private final static String CUSTOMER_NOT_FOUND_MSG = "customer with email %s not found";
     private final CustomerRepository customerRepository;
-    public Boolean login(String username, String password) {
-        Optional<Customer> customerFoundByUsername = customerRepository.findByEmail(username);
-        if(customerFoundByUsername.isEmpty()){
-            throw new UsernameNotFoundException(String.format(CUSTOMER_NOT_FOUND_MSG, username));
+    public String login(String username, String password) {
+        if(!username.equals("admin")){
+            Optional<Customer> customerFoundByUsername = customerRepository.findByEmail(username);
+            if(customerFoundByUsername.isEmpty())
+                throw new UsernameNotFoundException(String.format(CUSTOMER_NOT_FOUND_MSG, username));
+            if(!customerFoundByUsername.get().getEnabled())
+                throw new CustomerNotEnabledException("customer has not enabled");
+            if(!password.equals(customerFoundByUsername.get().getPassword()))
+                throw new IllegalStateException("customer's password is incorrect");
+            return "products.html";
+        } else{
+            if(!password.equals("admin"))
+                return "admin.html";
+            throw new IllegalArgumentException("Invalid credentials");
         }
-        if(!customerFoundByUsername.get().getEnabled()){
-            throw new CustomerNotEnabledException("customer has not enabled");
-        }
-        if(!password.equals(customerFoundByUsername.get().getPassword())){
-            throw new IllegalStateException("customer's password is incorrect");
-        }
-        return true;
     }
 }

@@ -10,7 +10,7 @@ $(document).ready(function() {
             url: 'http://localhost:8090/api/v1/login'+ url,
             contentType: 'application/json',
             success: function(response) {
-                window.open('index.html', '_self')
+                window.open(response.text(), '_self')
             },
             error: function(xhr) {
                 alert(xhr.responseText)
