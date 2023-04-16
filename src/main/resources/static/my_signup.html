@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/my_signup.css">
+    <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" rel="stylesheet" />
+    <link href="https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="loader_bg">
+    <div class="loader"><img src="images/loading.gif" alt="#"></div>
+</div>
+<div class="header">
+    <div class="left-section" >
+        <a href="index.html">
+            <img src="images/store.svg" alt="">
+        </a>
+        <h3>PShop</h3>
+    </div>
+</div>
+<div class="container">
+    <div id="alert-box-success" style="display: none">
+        <p id="success-message"></p>
+        <button id="success-button">OK</button>
+    </div>
+
+    <div id="alert-box-fail" style="display: none">
+        <p id="fail-message"></p>
+        <button id="fail-button">TRY AGAIN</button>
+    </div>
+
+    <div class="screen">
+        <div class="screen__content">
+            <form class="signup" id="signup_form" action="">
+                <h2 class="signup__title">Sign Up</h2>
+                <div class="signup__field">
+                    <input class="signup__input" id="fname" type="text" placeholder="FirstName" required>
+                    <i class="signup__icon fa fa-user"></i>
+                </div>
+                <div class="signup__field">
+                    <input class="signup__input" id="lname" type="text" placeholder="LastName" required>
+                    <i class="signup__icon fa fa-user"></i>
+                </div>
+                <div class="signup__field">
+                    <input class="signup__input" id="email" type="email" placeholder="Email" required>
+                    <i class="signup__icon fa fa-envelope"></i>
+                </div>
+                <div class="signup__field">
+                    <input class="signup__input" id="password" type="password" placeholder="Password" required>
+                    <i class="signup__icon fa fa-lock"></i>
+                </div>
+                <button type="submit" id="submit-btn" class="signup__submit">Sign Up<i class="button__icon fa fa-chevron-right"></i></button>
+            </form>
+            <div class="social-register">
+                <h3>sign in with</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-register__icon fab fa-instagram"></a>
+                    <a href="#" class="social-register__icon fab fa-facebook"></a>
+                    <a href="#" class="social-register__icon fab fa-twitter"></a>
+                </div>
+            </div>
+        </div>
+        <div class="screen__background">
+            <span class="screen__background__shape screen__background__shape4"></span>
+            <span class="screen__background__shape screen__background__shape3"></span>
+            <span class="screen__background__shape screen__background__shape2"></span>
+            <span class="screen__background__shape screen__background__shape1"></span>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="js/my_signup.js"></script>
+
+</body>
+</html>
