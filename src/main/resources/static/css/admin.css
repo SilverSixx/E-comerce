@@ -1,32 +1,57 @@
 body{
     font-family: Arial, serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #cc2b5e , #753a88);
 }
-
+p{
+    font-weight: bold;
+}
 table {
     border-collapse: collapse;
     width: 100%;
 }
-th, td {
-    text-align: left;
-    padding: 8px;
-    border-bottom: 1px solid #ddd;
-}
-th {
-    background-color: #5D54A4;
-    color: white;
-}
+
 button{
-    margin-right:20px;
-    background-color: #5D54A4;
-    color: white;
     border: none;
-    padding: 8px;
     font-weight: bold;
 }
-div{
-    margin-top: 10px;
-    width: 100%;
+
+i{
+    padding-left: 5px;
 }
-input{
-    margin: 10px;
+
+.global-container{
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border-radius: 30px;
+    border:none;
+    box-shadow: 0 0 20px ;
+    text-align: center;
+    align-items: center;
+}
+.sidebar{
+    width: 14%;
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    justify-content:space-between;
+}
+.customer-control-opt, .product-control-opt{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: right;
+}
+.bars{
+    font-size: 50px;
 }

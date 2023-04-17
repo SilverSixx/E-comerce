@@ -4,46 +4,55 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Customers and Products Controll</title>
+  <title>Admin Page</title>
   <link rel="stylesheet" href="css/admin.css">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" rel="stylesheet" />
+  <link href="https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css" rel="stylesheet" />
 </head>
 <body>
-<div>
-  <button id="addUser">Add Customer</button>
-  <button id="showUsers">Show Customer</button>
-</div>
-<div id="userList">
-  <table>
-    <thead>
-    <tr>
-      <th>Id</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Email</th>
-      <th>Password</th>
-      <th>Role</th>
-    </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
+<div class="global-container">
+    <div class="sidebar">
+      <div>
+        <i class="bars fas fa-solid fa-bars"></i>
+        <div class="customer-control-opt">
+          <p>Customers Control</p>
+          <i class="fas fa-solid fa-user"></i>
+        </div>
+        <div class="product-control-opt">
+          <p>Products Control</p>
+          <i class="fas fa-pen"></i>
+        </div>
+      </div>
+      <div class="settings-opt">
+        <i class="fas fa-gear"></i>
+        <p>Settings</p>
+      </div>
+    </div>
+
+
+  <div class="customer-control-container" style="display: none">
+    <button id="showUsers">Show Customer</button>
+    <div id="userList">
+      <table>
+        <thead>
+        <tr>
+          <th>Id</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Password</th>
+          <th>Role</th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
 </div>
 
-<div id="addUserModal" style="display:none;">
-  <h2>Add new customer</h2>
-  <form id="addUserForm">
-    <label for="fname">First Name:</label>
-    <input type="text" id="fname" name="fname"><br>
-    <label for="lname">Last Name:</label>
-    <input type="text" id="lname" name="lname"><br>
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email"><br>
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password"><br>
-    <input type="submit" value="Sign up">
-  </form>
-</div>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="js/admin.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js/admin.js"></script>
 </body>
 </html>
