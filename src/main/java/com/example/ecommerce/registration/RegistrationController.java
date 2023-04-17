@@ -1,6 +1,7 @@
 package com.example.ecommerce.registration;
 
 
+import com.example.ecommerce.exception.InvalidEmailException;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,9 +28,11 @@ public class RegistrationController {
     public ResponseEntity<?> register(@RequestBody RegistrationRequest request) {
         try{
             registrationService.register(request);
-            return ResponseEntity.ok().body("ok");
+            return ResponseEntity.ok().build();
         } catch (IllegalStateException e){
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Email already taken.");
+        } catch(InvalidEmailException e){
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Your email is invalid, please use a different email.");
         }
     }
     @GetMapping(value = "/confirm")

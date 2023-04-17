@@ -16,7 +16,7 @@ $(document).ready(function() {
                 showSuccess("Signup successful!")
             },
             error: function (xhr) {
-                alert(xhr.responseText)
+                showFailure(xhr.responseText)
             }
         })
     })

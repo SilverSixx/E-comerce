@@ -4,6 +4,7 @@ import com.example.ecommerce.customer.Customer;
 import com.example.ecommerce.customer.CustomerRole;
 import com.example.ecommerce.customer.CustomerService;
 import com.example.ecommerce.email.EmailSender;
+import com.example.ecommerce.exception.InvalidEmailException;
 import com.example.ecommerce.registration.token.ConfirmationService;
 import com.example.ecommerce.registration.token.ConfirmationToken;
 import lombok.AllArgsConstructor;
@@ -22,7 +23,7 @@ public class RegistrationService {
     public void register(RegistrationRequest request) {
         boolean isValidEmail = emailValidator.test(request.getEmail());
         if (!isValidEmail) {
-            throw new IllegalStateException("email not valid");
+            throw new InvalidEmailException("Your email is invalid, please use a different email.");
         }
         String token =  customerService.signUpCustomer(
                 new Customer(

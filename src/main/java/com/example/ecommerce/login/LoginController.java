@@ -17,8 +17,7 @@ public class LoginController {
     @GetMapping("/login")
     public ResponseEntity<?> login(@RequestParam("username") String username, @RequestParam("password") String password){
         try {
-            String afterLoginHtml = loginService.login(username, password);
-            return ResponseEntity.ok().body(afterLoginHtml);
+            return loginService.login(username, password);
         } catch (CustomerNotEnabledException e) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Customer has not enabled their account.");
         } catch (UsernameNotFoundException | IllegalStateException e) {

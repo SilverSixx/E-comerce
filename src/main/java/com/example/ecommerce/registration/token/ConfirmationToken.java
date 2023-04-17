@@ -12,7 +12,6 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "_confirmation_token")
 public class ConfirmationToken {
     @SequenceGenerator(
             name = "token_sequence",
@@ -25,7 +24,6 @@ public class ConfirmationToken {
             generator = "token_sequence"
     )
     private Long id;
-    @Column(name="_token")
     private String token;
     private LocalDateTime createdAt;
     private LocalDateTime expiresAt;

@@ -13,7 +13,7 @@ $(document).ready(function() {
                 window.open(response.toString(), '_self')
             },
             error: function(xhr) {
-                alert(xhr.responseText)
+                showMessage(xhr.responseText)
             }
         })
     })
@@ -29,4 +29,18 @@ $(function() {
         $('.loader_bg').fadeOut();
     }, 1500);
 });
+
+const alertBox = document.querySelector('#alert-box')
+const alertMessage = document.querySelector('#message')
+const alertBtn = document.querySelector('#alert-btn')
+
+function showMessage(message) {
+    alertMessage.innerHTML = message
+    alertBox.style.display = 'block'
+}
+
+alertBtn.addEventListener('click',function (event){
+    event.preventDefault()
+    alertBox.style.display = 'none'
+})
 

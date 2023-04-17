@@ -19,7 +19,6 @@ import java.util.UUID;
 public class CustomerService implements UserDetailsService {
     private final static String CUSTOMER_NOT_FOUND_MSG = "customer with email %s not found";
     private final CustomerRepository customerRepository;
-    private final BCryptPasswordEncoder bCryptPasswordEncoder;
     private ConfirmationService confirmationService;
     @Override
     public UserDetails loadUserByUsername(String email)

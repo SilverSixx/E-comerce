@@ -4,30 +4,35 @@ import com.example.ecommerce.customer.Customer;
 import com.example.ecommerce.customer.CustomerRepository;
 import com.example.ecommerce.exception.CustomerNotEnabledException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
+import java.util.Objects;
+
 
 @Service
 @RequiredArgsConstructor
 public class LoginService {
     private final static String CUSTOMER_NOT_FOUND_MSG = "customer with email %s not found";
     private final CustomerRepository customerRepository;
-    public String login(String username, String password) {
-        if(!username.equals("admin")){
-            Optional<Customer> customerFoundByUsername = customerRepository.findByEmail(username);
-            if(customerFoundByUsername.isEmpty())
-                throw new UsernameNotFoundException(String.format(CUSTOMER_NOT_FOUND_MSG, username));
-            if(!customerFoundByUsername.get().getEnabled())
+    public ResponseEntity<String> login(String username, String password) {
+        if (!Objects.equals(username, "admin")) {
+            Customer customer = customerRepository.findByEmail(username)
+                    .orElseThrow(() -> new UsernameNotFoundException(String.format(CUSTOMER_NOT_FOUND_MSG, username)));
+            if (!customer.getEnabled()) {
                 throw new CustomerNotEnabledException("customer has not enabled");
-            if(!password.equals(customerFoundByUsername.get().getPassword()))
+            }
+            if (!Objects.equals(password, customer.getPassword())) {
                 throw new IllegalStateException("customer's password is incorrect");
-            return "index.html";
-        } else{
-            if(!password.equals("admin"))
-                return "admin.html";
-            throw new IllegalArgumentException("Invalid credentials");
+            }
+            return ResponseEntity.ok("index.html");
+        } else {
+            if (Objects.equals(password, "admin")) {
+                return ResponseEntity.ok("admin.html");
+            }
+            throw new IllegalArgumentException("admin's password is incorrect");
         }
     }
+
 }

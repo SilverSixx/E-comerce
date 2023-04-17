@@ -27,13 +27,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     .anyRequest().authenticated()
                     .and()
             .formLogin()
-                .loginPage("http://localhost:63342/ECommerce/src/main/resources/static/my_login.html") // set the login page URL
+                .loginPage("http://localhost:63342/ECommerce/src/main/resources/static/index.html") // set the login page URL
                 .permitAll()
                 .and();
     }
 
     @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+    protected void configure(AuthenticationManagerBuilder auth) {
         auth.authenticationProvider(daoAuthenticationProvider());
     }
 
