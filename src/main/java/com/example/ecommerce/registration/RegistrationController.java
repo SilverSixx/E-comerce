@@ -2,6 +2,8 @@ package com.example.ecommerce.registration;
 
 
 import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -22,8 +24,13 @@ public class RegistrationController {
 
     // @RequestBody : Spring automatically map the request body (in form of JSON) to the parameter object
     @PostMapping(value="/registration")
-    public String register(@RequestBody RegistrationRequest request) {
-        return registrationService.register(request);
+    public ResponseEntity<?> register(@RequestBody RegistrationRequest request) {
+        try{
+            registrationService.register(request);
+            return ResponseEntity.ok().body("ok");
+        } catch (IllegalStateException e){
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Email already taken.");
+        }
     }
     @GetMapping(value = "/confirm")
     public String confirm(@RequestParam("token") String token){

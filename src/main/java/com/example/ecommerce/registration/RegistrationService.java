@@ -19,7 +19,7 @@ public class RegistrationService {
     private final EmailValidator emailValidator;
     private final ConfirmationService confirmationService;
     private final EmailSender emailSender;
-    public String register(RegistrationRequest request) {
+    public void register(RegistrationRequest request) {
         boolean isValidEmail = emailValidator.test(request.getEmail());
         if (!isValidEmail) {
             throw new IllegalStateException("email not valid");
@@ -38,7 +38,6 @@ public class RegistrationService {
                 request.getEmail(),
                 buildEmail(request.getFirstName(),link)
         );
-        return token;
     }
 
     @Transactional

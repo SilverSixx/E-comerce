@@ -23,7 +23,7 @@ public class LoginService {
                 throw new CustomerNotEnabledException("customer has not enabled");
             if(!password.equals(customerFoundByUsername.get().getPassword()))
                 throw new IllegalStateException("customer's password is incorrect");
-            return "products.html";
+            return "index.html";
         } else{
             if(!password.equals("admin"))
                 return "admin.html";

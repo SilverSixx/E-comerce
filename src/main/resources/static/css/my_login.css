@@ -91,13 +91,13 @@ body {
     color: #333;
 }
 
-#alert-message {
+#message {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
-#alert-button {
+#alert-btn {
     background-color: #007bff;
     color: #fff;
     border: none;
@@ -106,7 +106,7 @@ body {
     cursor: pointer;
 }
 
-#alert-button:hover {
+#alert-btn:hover {
     background-color: #0069d9;
 }
 .screen {

@@ -15,8 +15,8 @@ $(document).ready(function() {
             success: function(){
                 showSuccess("Signup successful!")
             },
-            error: function () {
-                showFailure("Signup failed. Please try again.")
+            error: function (xhr) {
+                alert(xhr.responseText)
             }
         })
     })
