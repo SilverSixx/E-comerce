@@ -1,8 +1,10 @@
 package com.example.ecommerce.customer;
 
+import com.example.ecommerce.exception.CustomerWithIDNotFound;
 import com.example.ecommerce.registration.token.ConfirmationService;
 import com.example.ecommerce.registration.token.ConfirmationToken;
 import lombok.AllArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -12,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -33,6 +36,15 @@ public class CustomerService implements UserDetailsService {
         return customerRepository.findAll();
     }
 
+    @Transactional
+    public void deleteCustomer(Long id){
+        Optional<Customer> customer = customerRepository.findById(id);
+        if(customer.isEmpty()){
+            throw new CustomerWithIDNotFound("customer with id "+ id+ "not found");
+        }
+        confirmationService.deleteTokenByCustomerId(id);
+        customerRepository.delete(customer.get());
+    }
 
     // return a link for confirmation
     @Transactional

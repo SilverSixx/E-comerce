@@ -28,7 +28,7 @@ public class ConfirmationToken {
     private LocalDateTime createdAt;
     private LocalDateTime expiresAt;
     private LocalDateTime confirmedAt;
-    @ManyToOne   // 1 user can have many tokens
+    @ManyToOne(cascade = CascadeType.REMOVE)  // 1 user can have many tokens
     @JoinColumn(
             nullable = false,
             name = "customer_id"

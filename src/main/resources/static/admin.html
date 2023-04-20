@@ -11,17 +11,22 @@
   <link href="https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css" rel="stylesheet" />
 </head>
 <body>
+<div class="loader_bg">
+  <div class="loader"><img src="images/loading.gif" alt="#"></div>
+</div>
 <div class="global-container">
     <div class="sidebar">
       <div>
-        <i class="bars fas fa-solid fa-bars"></i>
+        <a href="index.html">
+          <img src="images/store.svg" alt="">
+        </a>
         <div class="customer-control-opt">
-          <p>Customers Control</p>
           <i class="fas fa-solid fa-user"></i>
+          <p >Customers Control</p>
         </div>
         <div class="product-control-opt">
-          <p>Products Control</p>
           <i class="fas fa-pen"></i>
+          <p >Products Control</p>
         </div>
       </div>
       <div class="settings-opt">
@@ -29,26 +34,81 @@
         <p>Settings</p>
       </div>
     </div>
+    <div class="global-control-container">
+      <div class="customer-control-container" style="display: none">
+        <button id="showCustomer">Show Customer</button>
+        <button id="delCustomer">Delete Customer</button>
+        <div class="delCustomer-container" style="display: none">
+          <input type="text" id="id-to-del" placeholder="Customer ID to delete" >
+          <button id="del-btn">Confirm deletion</button>
+        </div>
+        <div class="customerList" >
+          <table>
+            <thead>
+            <tr>
+              <th>Id</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Email</th>
+              <th>Password</th>
+              <th>Role</th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
 
+      <div class="product-control-container" style="display: none">
+        <form class="upload-pc-form">
+          <h3>Enter the necessary information to upload a pc.</h3>
+          <div>
+            <label for="name">PC's name:</label>
+            <input type="text" id="name" name="name" >
+          </div>
+          <div>
+            <label for="manufacturer">PC's manufacturer:</label>
+            <input type="text" id="manufacturer" name="manufacturer" >
+          </div>
+          <div>
+            <label for="description">PC's description:</label>
+            <input type="text" id="description" name="description" >
+          </div>
+          <div>
+            <label for="image">PC's image:</label>
+            <i class="fas fa-cloud-upload-alt"></i>
+            <input type="file" id="image" name="image" accept="image/*">
+          </div>
+          <div>
+            <label for="price">PC's price:</label>
+            <input type="text" id="price" name="price">
+          </div>
+          <div>
+            <label for="in-stock">PC's stocks:</label>
+            <input type="text" id="in-stock" name="in-stock">
+          </div>
+          <input type="submit" value="Upload">
+        </form>
 
-  <div class="customer-control-container" style="display: none">
-    <button id="showUsers">Show Customer</button>
-    <div id="userList">
-      <table>
-        <thead>
-        <tr>
-          <th>Id</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Email</th>
-          <th>Password</th>
-          <th>Role</th>
-        </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
+        <div class="product-list">
+          <table>
+            <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Manufacturer</th>
+              <th>Model</th>
+              <th>Image</th>
+              <th>Price</th>
+              <th>In stock</th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
     </div>
-  </div>
+
+    </div>
 </div>
 
 

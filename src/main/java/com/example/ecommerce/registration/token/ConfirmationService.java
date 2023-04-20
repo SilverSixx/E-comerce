@@ -25,4 +25,7 @@ public class ConfirmationService {
         confirmationRepository.updateConfirmedAt(
                 token, LocalDateTime.now());
     }
+    public void deleteTokenByCustomerId(Long customerId){
+        confirmationRepository.deleteTokenByCustomerId(customerId);
+    }
 }
