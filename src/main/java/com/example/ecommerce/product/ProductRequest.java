@@ -8,7 +8,7 @@ import lombok.*;
 @NoArgsConstructor
 @ToString
 @EqualsAndHashCode
-public class PCRequest {
+public class ProductRequest {
     private String name;
     private String manufacturer;
     private String model;

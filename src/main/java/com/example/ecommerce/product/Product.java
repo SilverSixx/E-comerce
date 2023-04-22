@@ -10,7 +10,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @ToString
 @EqualsAndHashCode
-public class PC {
+public class Product {
     @SequenceGenerator(
             name="pc_sequence",
             sequenceName = "pc_sequence",
@@ -30,7 +30,7 @@ public class PC {
     private Double price;
     private Integer inStock;
 
-    public PC(String name, String manufacturer, String description, byte[] image, Double price, Integer inStock) {
+    public Product(String name, String manufacturer, String description, byte[] image, Double price, Integer inStock) {
         this.name = name;
         this.manufacturer = manufacturer;
         this.description = description;

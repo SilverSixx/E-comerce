@@ -10,7 +10,9 @@ body {
     min-height: 100vh;
     background: linear-gradient(90deg, whitesmoke, #C7C5F4);
 }
-
+img{
+    width: 60%;
+}
 p{
     font-weight: bold;
     width:auto;
@@ -18,9 +20,6 @@ p{
 table {
     border-collapse: collapse;
     width: 100%;
-}
-input{
-
 }
 button{
     border: none;
@@ -80,7 +79,7 @@ i{
 .sidebar{
     display: flex;
     flex-direction: column;
-    height: 75vh;
+    height: 100%;
     justify-content:space-between;
     border-radius: 30px;
     box-shadow: 0 0 10px;
@@ -92,7 +91,8 @@ i{
 .global-control-container{
     display: flex;
     flex-direction: column;
-}
+    min-height: 75vh;
+    }
 .customer-control-opt, .product-control-opt{
     display: flex;
     flex-direction: row;
@@ -117,7 +117,7 @@ i{
     padding: 5% 0 10% 0;
 }
 
-#showCustomer, #delCustomer{
+#showCustomers, #product-btn, #showProducts {
     background: none;
     border: 1px solid #333333;
     box-shadow: 0 0 5px;
@@ -127,27 +127,56 @@ i{
     margin-bottom: 10px;
     transition: ease-in all 0.3s;
 }
-#showCustomer:hover, #delCustomer:hover{
+#showCustomers:hover, #product-btn:hover, #showProducts:hover{
     cursor: pointer;
     border-radius: 15px;
 }
-#id-to-del{
-    margin-bottom: 10px;
-    padding: 10px;
+
+.deleteInTable{
     background: none;
-    border: 1px solid #333333;
-}
-#del-btn{
-    background: none;
-    padding: 10px;
+    padding: 6px;
     border: 1px solid #333333;
 }
 .product-control-container form {
     max-width: 50%;
     text-align: left;
-    padding-left: 5%;
     padding-bottom: 2%;
 }
-.upload-pc-form div{
-    padding-bottom: 2%;
+.upload-product-form {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+}
+
+.upload-product-form h3 {
+    margin-top: 0;
+}
+
+.upload-product-form input[type="text"],
+.upload-product-form input[type="file"] {
+    width: 100%;
+    padding: 6px;
+    margin-bottom: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.upload-product-form input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.upload-product-form input[type="submit"]:hover {
+    background-color: #3e8e41;
+}
+
+.img-th{
+    width: 20%;
 }

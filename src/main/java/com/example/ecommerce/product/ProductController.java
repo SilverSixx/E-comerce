@@ -12,12 +12,12 @@ import java.util.List;
 @CrossOrigin("*")
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/api/v1/pcs")
-public class PCController {
-    private final PCService pcService;
+@RequestMapping("api/v1/products")
+public class ProductController {
+    private final ProductService productService;
     @GetMapping
-    public ResponseEntity<List<PC>> getPCs(){
-        return ResponseEntity.ok().body(pcService.getPCs());
+    public ResponseEntity<List<Product>> getPCs(){
+        return ResponseEntity.ok().body(productService.getPCs());
     }
     @PostMapping("/upload")
     public ResponseEntity<?> uploadPC(
@@ -31,13 +31,13 @@ public class PCController {
             byte[] imageData = image.getBytes();
             if(imageData.length > 5242880){
                 return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(
-                        "Cant update a file greater than 5MB, please use a different image"
+                        "Cant update an image greater than 5MB, please use a different image"
                 );
             }
-            PC pc = new PC(name, manufacturer, description, imageData, price, inStock);
-            pcService.uploadPC(pc);
+            Product product = new Product(name, manufacturer, description, imageData, price, inStock);
+            productService.uploadPC(product);
         } catch (IOException e) {
-            return ResponseEntity.ok().body("Error upload pc.");
+            return ResponseEntity.ok().body("Error upload product.");
         }
         return ResponseEntity.ok().build();
     }
@@ -54,9 +54,19 @@ public class PCController {
 
             //pcService.changePC(id, name, manufacturer, model, image, price, inStock);
             return ResponseEntity.ok().build();
-        } catch (PCNotFoundByIDException e){
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("PC with the id " + id + " does not exist in the database.");
+        } catch (ProductNotFoundByIDException e){
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Product with the id " + id + " does not exist in the database.");
         }
-
     }
+
+    @DeleteMapping("/delete/{productId}")
+    public ResponseEntity<?> deleteProduct(@PathVariable("productId") Long productId){
+        try{
+            productService.deleteProduct(productId);
+            return ResponseEntity.ok().build();
+        } catch (IllegalStateException e){
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Product with the id " + productId + " does not exist in the database.");
+        }
+    }
+
 }

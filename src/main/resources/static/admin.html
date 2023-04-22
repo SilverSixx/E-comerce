@@ -36,17 +36,12 @@
     </div>
     <div class="global-control-container">
       <div class="customer-control-container" style="display: none">
-        <button id="showCustomer">Show Customer</button>
-        <button id="delCustomer">Delete Customer</button>
-        <div class="delCustomer-container" style="display: none">
-          <input type="text" id="id-to-del" placeholder="Customer ID to delete" >
-          <button id="del-btn">Confirm deletion</button>
-        </div>
+        <button id="showCustomers">Show Customers</button>
         <div class="customerList" >
           <table>
             <thead>
             <tr>
-              <th>Id</th>
+              <th>ID</th>
               <th>First Name</th>
               <th>Last Name</th>
               <th>Email</th>
@@ -60,34 +55,66 @@
       </div>
 
       <div class="product-control-container" style="display: none">
-        <form class="upload-pc-form">
-          <h3>Enter the necessary information to upload a pc.</h3>
+        <button id="product-btn">Show/Hide the uploader</button>
+        <button id="showProducts">Show Products</button>
+        <form class="upload-product-form" style="display: none" >
+          <h3>Enter the necessary information to upload a product.</h3>
           <div>
-            <label for="name">PC's name:</label>
+            <label for="name">Product's name:</label>
             <input type="text" id="name" name="name" >
           </div>
           <div>
-            <label for="manufacturer">PC's manufacturer:</label>
+            <label for="manufacturer">Product's manufacturer:</label>
             <input type="text" id="manufacturer" name="manufacturer" >
           </div>
           <div>
-            <label for="description">PC's description:</label>
+            <label for="description">Product's description:</label>
             <input type="text" id="description" name="description" >
           </div>
           <div>
-            <label for="image">PC's image:</label>
+            <label for="image">Product's image:</label>
             <i class="fas fa-cloud-upload-alt"></i>
             <input type="file" id="image" name="image" accept="image/*">
           </div>
           <div>
-            <label for="price">PC's price:</label>
+            <label for="price">Product's price:</label>
             <input type="text" id="price" name="price">
           </div>
           <div>
-            <label for="in-stock">PC's stocks:</label>
+            <label for="in-stock">Product's stocks:</label>
             <input type="text" id="in-stock" name="in-stock">
           </div>
           <input type="submit" value="Upload">
+        </form>
+
+        <form class="change-product-form" style="display: none" >
+          <h3>Enter the necessary information to upload a product.</h3>
+          <div>
+            <label for="name-to-change">Product's new name:</label>
+            <input type="text" id="name-to-change" name="name-to-change">
+          </div>
+          <div>
+            <label for="manu-to-change">Product's new manufacturer:</label>
+            <input type="text" id="manu-to-change" name="manu-to-change" >
+          </div>
+          <div>
+            <label for="description-to-change">Product's new description:</label>
+            <input type="text" id="description-to-change" name="description-to-change" >
+          </div>
+          <div>
+            <label for="image-to-change">Product's new image:</label>
+            <i class="fas fa-cloud-upload-alt"></i>
+            <input type="file" id="image-to-change" name="image-to-change" accept="image/*">
+          </div>
+          <div>
+            <label for="price-to-change">Product's new price:</label>
+            <input type="text" id="price-to-change" name="price-to-change">
+          </div>
+          <div>
+            <label for="inStock-to-change">Product's new stocks:</label>
+            <input type="text" id="inStock-to-change" name="inStock-to-change">
+          </div>
+          <input type="submit" value="Change">
         </form>
 
         <div class="product-list">
@@ -97,8 +124,8 @@
               <th>ID</th>
               <th>Name</th>
               <th>Manufacturer</th>
-              <th>Model</th>
-              <th>Image</th>
+              <th>Description</th>
+              <th class="img-th">Image</th>
               <th>Price</th>
               <th>In stock</th>
             </tr>
@@ -106,11 +133,9 @@
             <tbody></tbody>
           </table>
         </div>
-    </div>
-
+      </div>
     </div>
 </div>
-
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="js/admin.js"></script>
