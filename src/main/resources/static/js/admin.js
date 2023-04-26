@@ -45,7 +45,40 @@ $(document).ready(function(){
         })
     })
 });
+$(document).ready(function() {
+    $('table')
+        .on('mouseenter', 'td', function() {
+        let $td = $(this);
+        let tooltipText = $td.data('tooltip');
+        $td.append('<div class="tooltip" style="max-width: 50%;margin-left: 25%;background-color:#ccc"> <i class="fas fa-pen"></i> ' + tooltipText + '</div>'); // create a new div with the tooltip text and append it to the td
+    })
+        .on('mouseleave', 'td', function() {
+        let $td = $(this);
+        $td.find('.tooltip').remove(); // remove the tooltip div when mouse leaves the td
+    })
+        .on('click', 'td', function(event) {
+        let $td = $(this);
+            if (event.target !== this) {
 
+                return;
+            }
+        let originalContent = $td.text();
+        $td.empty()
+        $('<input>').attr({
+            type: 'text',
+            value: originalContent
+        }).appendTo($td).focus();
+    })
+        .on('keypress', 'input', function(event) {
+        let $input = $(this);
+        if (event.which === 13) { // Enter key pressed
+            let newContent = $input.val();
+            let $td = $input.closest('td');
+            $td.text(newContent);
+            // TODO: Update the change in the database
+        }
+    })
+});
 function showCustomers(){
     $.get('http://localhost:8090/api/v1/customers', function(data){
         let tbody = $('.customerList tbody');
@@ -72,25 +105,15 @@ function showProducts(){
         tbody.empty();
         data.forEach(function(p){
             let tr = $('<tr>');
-            tr.append($('<td>').text(p.id));
-            tr.append($('<td>').text(p.name));
-            tr.append($('<td>').text(p.manufacturer));
-            tr.append($('<td>').text(p.description));
-            const byteCharacters = atob(p.image); // Convert base64 string to byte array
-            const byteNumbers = new Array(byteCharacters.length);
-            for (let i = 0; i < byteCharacters.length; i++) {
-                byteNumbers[i] = byteCharacters.charCodeAt(i);
-            }
-            const byteArray = new Uint8Array(byteNumbers);
-            const blob = new Blob([byteArray], {type: 'image/*'});
-            const imgUrl = URL.createObjectURL(blob);
-            const imgElement = document.createElement('img');
-            imgElement.src = imgUrl;
-            tr.append($('<td>').append(imgElement))
-            tr.append($('<td>').text(p.price));
-            tr.append($('<td>').text(p.inStock))
+            tr.append($('<td data-tooltip="Edit">').text(p.id));
+            tr.append($('<td data-tooltip="Edit">').text(p.name));
+            tr.append($('<td data-tooltip="Edit">').text(p.manufacturer));
+            tr.append($('<td data-tooltip="Edit">').text(p.description));
+            tr.append($('<td>').append(getImgUrl(p.image)));
+            tr.append($('<td data-tooltip="Edit">').text(p.price));
+            tr.append($('<td data-tooltip="Edit">').text(p.inStock))
             tr.append($('<td>')
-                .html('<button id="editProduct" onclick="editProduct('+p.id+')">Edit</button> ' + '<button class="deleteInTable" onclick="deleteProduct('+p.id+')">Delete</button>'))
+                .html('<button data-tooltip="Delete" class="deleteInTable" onclick="deleteProduct('+p.id+')">Delete</button>'))
             tbody.append(tr);
         });
 
@@ -127,7 +150,16 @@ function deleteProduct(id) {
         }
     })
 }
-
-function editProduct(id){
-
+function getImgUrl(img){
+    const byteCharacters = atob(img); // Convert base64 string to byte array
+    const byteNumbers = new Array(byteCharacters.length);
+    for (let i = 0; i < byteCharacters.length; i++) {
+        byteNumbers[i] = byteCharacters.charCodeAt(i);
+    }
+    const byteArray = new Uint8Array(byteNumbers);
+    const blob = new Blob([byteArray], {type: 'image/*'});
+    const imgUrl = URL.createObjectURL(blob);
+    const imgElement = document.createElement('img');
+    imgElement.src = imgUrl;
+    return imgElement;
 }
