@@ -3,7 +3,9 @@ package com.example.ecommerce.product;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
 @Service
@@ -25,7 +27,7 @@ public class ProductService {
         productRepository.deleteById(id);
     }
     @Transactional
-    public void changePC(Long id, String name, String manufacturer, String model, byte[] image, Double price, Integer inStock){
+    public void changePC(Long id, String name, String manufacturer, String description, MultipartFile image, Double price, Integer inStock){
         Product productFoundById = productRepository.findById(id).orElseThrow(
                 () -> new ProductNotFoundByIDException("PC with the id " + id + " does not exist in the database.")
         );
@@ -35,11 +37,20 @@ public class ProductService {
         if(manufacturer != null && manufacturer.length() > 0 && !manufacturer.equals(productFoundById.getManufacturer())){
             productFoundById.setManufacturer(manufacturer);
         }
-        if(model != null && model.length() > 0 && !model.equals(productFoundById.getDescription())){
-            productFoundById.setDescription(model);
+        if(description != null && description.length() > 0 && !description.equals(productFoundById.getDescription())){
+            productFoundById.setDescription(description);
         }
         if(image != null){
-            productFoundById.setImage(image);
+            byte[] imgData;
+            try {
+                imgData = image.getBytes();
+                if(imgData.length > 5242880){
+                    throw new IllegalStateException("Cant update an image greater than 5MB, please use a different image");
+                }
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            productFoundById.setImage(imgData);
         }
         if(price != null && price > 0 && !price.equals(productFoundById.getPrice())){
             productFoundById.setPrice(price);

@@ -46,20 +46,21 @@ $(document).ready(function(){
     })
 });
 $(document).ready(function() {
+    let id;
+    let productAttr;
     $('table')
-        .on('mouseenter', 'td', function() {
-        let $td = $(this);
-        let tooltipText = $td.data('tooltip');
-        $td.append('<div class="tooltip" style="max-width: 50%;margin-left: 25%;background-color:#ccc"> <i class="fas fa-pen"></i> ' + tooltipText + '</div>'); // create a new div with the tooltip text and append it to the td
+        .on('mouseenter', 'td:not(:first-child):not(:last-child):not(:nth-child(5))', function() {
+        let index = $(this).index()
+        productAttr = $(this).closest('table').find('thead th').eq(index).text()
+        id = $(this).closest('tr').find('td:first-child').text()
+        $(this).append('<i class="fas fa-pen edittip"></i>');
     })
-        .on('mouseleave', 'td', function() {
-        let $td = $(this);
-        $td.find('.tooltip').remove(); // remove the tooltip div when mouse leaves the td
+        .on('mouseleave', 'td:not(:first-child):not(:last-child)', function() {
+        $(this).find('.edittip').remove();
     })
-        .on('click', 'td', function(event) {
+        .on('click', 'td:not(:first-child):not(:last-child)', function(event) {
         let $td = $(this);
             if (event.target !== this) {
-
                 return;
             }
         let originalContent = $td.text();
@@ -76,6 +77,17 @@ $(document).ready(function() {
             let $td = $input.closest('td');
             $td.text(newContent);
             // TODO: Update the change in the database
+            $.ajax({
+                type: 'PUT',
+                url: 'http://localhost:8090/api/v1/products/edit/' + id + '?' + productAttr + '=' + newContent,
+                contentType: 'application/json',
+                success: function(){
+                    alert('update successfully')
+                },
+                error: function () {
+                    alert('update failed')
+                }
+            })
         }
     })
 });
@@ -105,15 +117,15 @@ function showProducts(){
         tbody.empty();
         data.forEach(function(p){
             let tr = $('<tr>');
-            tr.append($('<td data-tooltip="Edit">').text(p.id));
-            tr.append($('<td data-tooltip="Edit">').text(p.name));
-            tr.append($('<td data-tooltip="Edit">').text(p.manufacturer));
-            tr.append($('<td data-tooltip="Edit">').text(p.description));
+            tr.append($('<td>').text(p.id));
+            tr.append($('<td>').text(p.name));
+            tr.append($('<td>').text(p.manufacturer));
+            tr.append($('<td>').text(p.description));
             tr.append($('<td>').append(getImgUrl(p.image)));
-            tr.append($('<td data-tooltip="Edit">').text(p.price));
-            tr.append($('<td data-tooltip="Edit">').text(p.inStock))
+            tr.append($('<td>').text(p.price));
+            tr.append($('<td>').text(p.inStock))
             tr.append($('<td>')
-                .html('<button data-tooltip="Delete" class="deleteInTable" onclick="deleteProduct('+p.id+')">Delete</button>'))
+                .html('<button class="deleteInTable" onclick="deleteProduct('+p.id+')">Delete</button>'))
             tbody.append(tr);
         });
 

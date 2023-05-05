@@ -26,7 +26,7 @@ public class LoginService {
             if (!Objects.equals(password, customer.getPassword())) {
                 throw new IllegalStateException("customer's password is incorrect");
             }
-            return ResponseEntity.ok("index.html");
+            return ResponseEntity.ok("home_page.html");
         } else {
             if (Objects.equals(password, "admin")) {
                 return ResponseEntity.ok("admin.html");

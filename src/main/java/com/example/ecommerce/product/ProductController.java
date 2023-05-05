@@ -46,13 +46,12 @@ public class ProductController {
             @PathVariable("id") Long id,
             @RequestParam (required = false) String name,
             @RequestParam (required = false) String manufacturer,
-            @RequestParam (required = false) String model,
+            @RequestParam (required = false) String description,
             @RequestParam (required = false) MultipartFile image,
             @RequestParam (required = false) Double price,
             @RequestParam (required = false) Integer inStock) {
         try{
-
-            //pcService.changePC(id, name, manufacturer, model, image, price, inStock);
+            productService.changePC(id, name, manufacturer, description, image, price, inStock);
             return ResponseEntity.ok().build();
         } catch (ProductNotFoundByIDException e){
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Product with the id " + id + " does not exist in the database.");

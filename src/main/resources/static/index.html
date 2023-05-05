@@ -1,236 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-    <title>Home</title>
-    <!--custom css-->
-    <link href="css/index.css" rel="stylesheet" />
-    <link href="css/header.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-    <link href="//cdn.jsdelivr.net/jquery.slick/1.5.0/slick.css" rel="stylesheet" />
-    <link href="//cdn.jsdelivr.net/jquery.slick/1.5.0/slick-theme.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <title>PShop</title>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/header_index.css">
+
 </head>
 <body>
-    <div class="loader_bg">
-        <div class="loader"><img src="images/loading.gif" alt="#"></div>
-    </div>
-<!--top container header, which contains the header and the background custom drawing-->
-    <div class="header-top">
-        <!--header contains 2 sections, left and right-->
-        <div class="header">
-            <div class="left-section" >
-                <a href="index.html">
-                    <img src="images/store.svg" alt="">
-                </a>
-                <h3>PShop</h3>
-            </div>
-            <div class="right-section">
-                <a href="#">
-                    <div class="tooltip">Help</div>
-                </a>
 
-                <a href="#">
-                    <div class="tooltip">Contact</div>
-                </a>
-
-                <a href="#">
-                    <div class="tooltip">About us</div>
-                </a>
-
-                <a href="my_login.html">
-                    <div class="sign-in">Login / Register</div>
-                </a>
-
-            </div>
-        </div>
-        <!--top-bg contains a row of brief description and drawing img -->
-        <div class="top-bg">
-            <div class="top-row">
-                <div class="brief-description-container">
-                    <div class="text-bg">
-                        <h1>Computer and <br>laptop shop</h1>
-                        <a href="my_signup.html" style="text-decoration: none;">Buy Now</a>
-                    </div>
-                </div>
-                <div class="top-img-container">
-                    <div class="text-img">
-                        <figure><img src="images/top_img.png" alt="#"/></figure>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!--header contains 2 sections, left and right-->
+  <div class="header">
+    <div class="left-section" >
+      <div class="home-icon-container">
+        <a href="index.html">
+          <img src="images/store.svg" alt="">
+        </a>
+        <h3>PShop</h3>
+        <div class="tooltip">Back to Homepage</div>
+      </div>
     </div>
-<!--about-->
-    <div class="about">
-        <div class="top-container">
-            <div class="title-container">
-                <div class="title">
-                    <h2>About PShop</h2>
-                    <span>We provide quality computer products and services to meet all your technological needs.</span>
-                </div>
-            </div>
-        </div>
-        <div class="about-img-container">
-            <div class="box">
-                <img src="images/about_img.png" alt="#"/>
-                <a class="read_more" href="#">Read more</a>
-            </div>
-        </div>
-    </div>
-<!--best choice-->
-    <div class="best-choice">
-        <div class="top-container">
-            <div class="title-container">
-                <div class="title">
-                    <h2>Why choose us</h2>
-                </div>
-            </div>
-        </div>
-        <div class="achievements-box">
-            <div class="col">
-                <div class="achievement">
-                    <h4>TOP <br>OUTSTANDING ENTERPRISES</h4>
-                    <p>Reach the top 100 of the most popular brands through feedback from users</p>
-                </div>
-            </div>
-            <div class="col">
-                <div class="achievement">
-                    <h4>APPLE <br>Authorized reseller</h4>
-                    <p>The first and oldest partner of 1 of the biggest brands in the world in technology </p>
-                </div>
-            </div>
-            <div class="col">
-                <div class="achievement">
-                    <h4>100% <br> High Quality</h4>
-                    <p>The products we provide to consumers have been carefully tested and quality assured throughout the service period</p>
-                </div>
-            </div>
-        </div>
-        <div class="read_more_container">
-            <a class="read_more" href="#">Read more</a>
-        </div>
-    </div>
-    <!--discount section-->
-    <div class="discount-section">
-        <div class="side-color-bar">
-        </div>
-        <img src="images/mac.png" alt="" style="width: 100%; margin: 0">
-        <div class="discount-info-container">
-            <h2><span class="discount">15% </span>Discount everyday</h2>
-            <p>To take advantage of this special offer, simply enter the promo code TECH20 at checkout. The discount will be applied to your total purchase price, and you'll be able to enjoy great savings on some of the latest and greatest tech products on the market.
-                <br>
-                Don't miss out on this amazing opportunity to upgrade your tech game for less. Whether you're in the market for a new laptop or just need to stock up on some essential accessories, our special discount has got you covered. So head on over to our store today, and start shopping!</p>
-        </div>
+    <div class="mid-section">
+      <input class="search-bar" type="text" placeholder="Browse products">
+      <div class="search-div">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <div class="tooltip">Browse</div>
+      </div>
+      <div class="voice-search-div">
+        <i class="fa fa-microphone"></i>
+        <div class="tooltip">Browse with your voice</div>
+      </div>
     </div>
 
-
-<!-- Speech Bubble Slider -->
-
-<section class="quotes">
-    <div class="bubble">
-        <blockquote>I refuse to accept the view that mankind is so tragically bound to the starless midnight of racism and war that the bright daybreak of peace and brotherhood can never become a reality... I believe that unarmed truth and unconditional love will have the final word.
-        </blockquote>
-        <div></div>
-        <cite> Martin Luther King, Jr.</cite> </div>
-    <div class="bubble">
-        <blockquote> Peace is not a relationship of nations. It is a condition of mind brought about by a serenity of soul. Peace is not merely the absence of war. It is also a state of mind. Lasting peace can come only to peaceful people.
-        </blockquote>
-        <div></div>
-        <cite> Jawaharlal Nehru</cite> </div>
-    <div class="bubble">
-        <blockquote> Forgiveness is not always easy. At times, it feels more painful than the wound we suffered, to forgive the one that inflicted it. And yet, there is no peace without forgiveness.
-        </blockquote>
-        <div></div>
-        <cite> Marianne Williamson</cite> </div>
-
-</section>
-
-    <footer>
-        <div class="map_main">
-            <div class="map-responsive">
-                <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&amp;q=Đại+học+Hà+Nội" width="600" height="400" frameborder="0" style="border:0; width: 100%;" allowfullscreen=""></iframe>
-            </div>
-        </div>
-
-        <div class="footer_section">
-            <div class="contact-info-container">
-                <div>
-                    <h3 class="address_text">Contact Us</h3>
-                    <div class="address_bt">
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-map-marker">
-                                    <span >Address: Hanoi University</span>
-                                    </i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-phone" >
-                                    <span >Call: +84 354431900</span>
-                                    </i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-envelope" >
-                                    <span >Email: pshop_offical@gmail.com</span>
-                                    </i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div>
-                <div class="footer_logo">
-                    <a href="index.html">
-                        <img src="images/store.svg"  alt="image">
-                    </a>
-                </div>
-                <div>
-                    <p class="further_text">Thank you for choosing us as your go-to tech shop. We're committed to providing you with the best products and service possible.</p>
-                </div>
-
-                <div class="social_icon">
-                    <ul>
-                        <li>
-                            <a href="#"><i class="fa fa-facebook" ></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-twitter" ></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-linkedin" ></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-instagram" ></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="best-products-container">
-                <div >
-                    <h3 class="address_text">Best Products</h3>
-                    <p class="products-text">MacBook Pro, Dell XPS, HP Spectre, Asus ZenBook, Dell Inspiron, HP Pavilion, Lenovo IdeaCentre, Acer Aspire</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- copyright section start -->
-    <div class="copyright_section">
+    <div class="right-section">
+      <div class="lang-icon-container">
         <div>
-            <p class="copyright_text">2023 All Rights Reserved. Designed by Pham Dat.</p>
+          <div class="lang-icon"><img src="images/language_icon.png"></div>
         </div>
+        <div class="tooltip">Change language</div>
+      </div>
+      <div class="support-icon-container">
+        <div>
+          <div class="support-icon"><i class="fa-regular fa-circle-question"></i></div>
+        </div>
+        <div class="tooltip">Support</div>
+      </div>
+      <div class="notifications-icon-container">
+        <div>
+          <div class="notifications-icon"><i class="fa-sharp fa-regular fa-bell"></i></div>
+          <div class="notification-count">3</div>
+        </div>
+        <div class="tooltip">Notifications</div>
+      </div>
+      <div class="user-icon-container">
+        <div>
+          <div class="user-icon"><i class="fa-regular fa-user"></i></div>
+        </div>
+        <div class="tooltip">User info</div>
+      </div>
+      <div class="cart-icon-container">
+        <div>
+          <div class="cart-icon"><img src="images/cart.png"></div>
+          <div class="cart-count">1</div>
+        </div>
+        <div class="tooltip">To purchase</div>
+      </div>
     </div>
+  </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="js/index.js"></script>
+  <div class="global-container">
+    a
+  </div>
+
+
+  <script src="js/index.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://kit.fontawesome.com/f1e40462be.js" crossorigin="anonymous"></script>
+
 </body>
 </html>
