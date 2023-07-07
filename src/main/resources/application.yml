@@ -2,7 +2,7 @@ server:
   error:
     include-message: always
     include-binding-errors: always
-  port: 8090
+  port: 8080
 
 spring:
   datasource:
@@ -22,17 +22,18 @@ spring:
   mail:
     host: localhost
     port: 1025
+    protocol: smtp
     username: dat
     password: 1
-
+    default-encoding: UTF-8
     properties:
       mail:
         smtp:
-          ssl:
-            trust: "*"
           auth: true
           starttls:
             enabled: true
-          connectiontimeout: 5000
-          timeout: 3000
-          writetimeout: 5000
+          ssl:
+            trust: "*"
+        connectiontimeout: 5000
+        timeout: 3000
+        writetimeout: 5000

@@ -1,7 +1,6 @@
 package com.example.ecommerce.registration;
 
 import com.example.ecommerce.customer.Customer;
-import com.example.ecommerce.customer.CustomerRole;
 import com.example.ecommerce.customer.CustomerService;
 import com.example.ecommerce.email.EmailSender;
 import com.example.ecommerce.exception.InvalidEmailException;
@@ -27,17 +26,14 @@ public class RegistrationService {
         }
         String token =  customerService.signUpCustomer(
                 new Customer(
-                        request.getFirstName(),
-                        request.getLastName(),
                         request.getEmail(),
-                        request.getPassword(),
-                        CustomerRole.CUSTOMER
+                        request.getPassword()
                 )
         );
-        String link = "http://localhost:8090/api/v1/confirm?token=" + token;
+        String link = "http://localhost:8080/api/v1/confirm?token=" + token;
         emailSender.send(
                 request.getEmail(),
-                buildEmail(request.getFirstName(),link)
+                buildEmail(request.getEmail(),link)
         );
     }
 

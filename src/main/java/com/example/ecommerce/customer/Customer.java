@@ -1,66 +1,50 @@
 package com.example.ecommerce.customer;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.example.ecommerce.role.Role;
+import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
+import java.util.List;
 
-@Getter
-@Setter
-@EqualsAndHashCode
 @NoArgsConstructor
+@AllArgsConstructor
+@Data
 @Entity
 public class Customer implements UserDetails {
     // UserDetails in Spring Security
-    @SequenceGenerator(
-            name = "customer_sequence",
-            sequenceName = "customer_sequence",
-            allocationSize = 1
-    )
     @Id
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "customer_sequence"
-    )
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String firstName;
     private String lastName;
     private String email;
     private String password;
-    @Enumerated(EnumType.STRING)
-    private CustomerRole customerRole;
+    @ManyToMany(fetch = FetchType.EAGER)
+    private Collection<Role> roles = new ArrayList<>();
     private Boolean locked = false;
     private Boolean enabled = false; // will be enabled when confirms email
 
-    public Customer(String firstName, String lastName, String email, String password, CustomerRole customerRole) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public Customer(Long id, String email, String password, Collection<Role> roles, Boolean isEnabled) {
+        this.id = id;
         this.email = email;
         this.password = password;
-        this.customerRole = customerRole;
+        this.roles = roles;
+        this.enabled = isEnabled;
     }
-    public Customer(String email, String password, CustomerRole customerRole, Boolean enabled){
-        this.email = email;
-        this.password = password;
-        this.customerRole = customerRole;
-        this.enabled = enabled;
-    }
-
+    public Customer(String email, String password) {}
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        SimpleGrantedAuthority authority =
-                new SimpleGrantedAuthority(customerRole.name());
-        return Collections.singletonList(authority);
+        List<GrantedAuthority> authorities = new ArrayList<>();
+        for (Role role : roles) {
+            authorities.add(new SimpleGrantedAuthority(role.getRoleName()));
+        }
+        return authorities;
     }
-
-
 
     @Override
     public String getPassword() {
@@ -70,14 +54,6 @@ public class Customer implements UserDetails {
     @Override
     public String getUsername() {
         return email;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
     }
 
     @Override

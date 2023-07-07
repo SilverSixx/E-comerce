@@ -1,7 +1,4 @@
 {
   "name": "ECommerce",
-  "version": "1.0.0",
-  "devDependencies": {
-    "crypto-js": "^4.1.1"
-  }
+  "version": "1.0.0"
 }
