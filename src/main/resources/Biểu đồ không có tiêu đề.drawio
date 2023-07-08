@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-07-08T06:47:19.501Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="2-9QAkVcyM2_6Egn9FTZ" version="21.5.2" type="github">
+<mxfile host="app.diagrams.net" modified="2023-07-08T06:51:45.772Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="q-W11kn8S3q-O-MLIV9W" version="21.5.2" type="github">
   <diagram name="Trang-1" id="8A041tUXnW5OPchwVmy4">
-    <mxGraphModel dx="3007" dy="1916" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2606" dy="1683" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -11,10 +11,10 @@
           <mxGeometry x="95" y="380" width="210" height="120" as="geometry" />
         </mxCell>
         <mxCell id="LjmC9Kq2_VQWsRULpjBZ-3" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;registration endpoint&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="480" y="700" width="180" height="100" as="geometry" />
+          <mxGeometry x="450" y="670" width="180" height="100" as="geometry" />
         </mxCell>
         <mxCell id="LjmC9Kq2_VQWsRULpjBZ-6" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;registration service&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="360" y="810" width="120" height="80" as="geometry" />
+          <mxGeometry x="370" y="785" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="LjmC9Kq2_VQWsRULpjBZ-11" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" source="LjmC9Kq2_VQWsRULpjBZ-3" target="LjmC9Kq2_VQWsRULpjBZ-6" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -53,7 +53,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="NTZS6p91OAcP8tLEtoPU-9" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;Notice valid email and password in FE&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="350" y="530" width="220" height="110" as="geometry" />
+          <mxGeometry x="330" y="500" width="220" height="110" as="geometry" />
         </mxCell>
         <mxCell id="NTZS6p91OAcP8tLEtoPU-10" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.412;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="NTZS6p91OAcP8tLEtoPU-9" target="LjmC9Kq2_VQWsRULpjBZ-3" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -68,10 +68,10 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="HxPMgDZnOBgNdD9O4cuE-1" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Confirm token&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="305" y="920" width="120" height="60" as="geometry" />
+          <mxGeometry x="230" y="875" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="HxPMgDZnOBgNdD9O4cuE-2" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;send confirm email&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="760" y="970" width="120" height="60" as="geometry" />
+          <mxGeometry x="710" y="900" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="HxPMgDZnOBgNdD9O4cuE-3" value="" style="endArrow=classic;html=1;rounded=0;exitX=1.025;exitY=0.41;exitDx=0;exitDy=0;exitPerimeter=0;entryX=-0.01;entryY=0.378;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="HxPMgDZnOBgNdD9O4cuE-4" target="HxPMgDZnOBgNdD9O4cuE-2" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -102,19 +102,20 @@
             <mxPoint x="-360" y="1470" as="sourcePoint" />
             <mxPoint x="100" y="1420" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="80" y="1120" />
-              <mxPoint x="250" y="1120" />
+              <mxPoint x="90" y="1030" />
+              <mxPoint x="180" y="1040" />
+              <mxPoint x="280" y="1020" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="HxPMgDZnOBgNdD9O4cuE-13" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Check and save Customer&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="-110" y="990" width="130" height="60" as="geometry" />
+        <mxCell id="HxPMgDZnOBgNdD9O4cuE-13" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Check and save Customer&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="-60" y="955" width="130" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="HxPMgDZnOBgNdD9O4cuE-15" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Create token to confirm and save to token DB&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="40" y="1055" width="130" height="50" as="geometry" />
+        <mxCell id="HxPMgDZnOBgNdD9O4cuE-15" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Create token to confirm and save to token DB&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="85" y="990" width="130" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="HxPMgDZnOBgNdD9O4cuE-17" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;return token to send to user&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="210" y="1090" width="120" height="30" as="geometry" />
+        <mxCell id="HxPMgDZnOBgNdD9O4cuE-17" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;return token to send to user&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="260" y="980" width="120" height="30" as="geometry" />
         </mxCell>
         <mxCell id="HxPMgDZnOBgNdD9O4cuE-18" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" parent="1" source="HxPMgDZnOBgNdD9O4cuE-15" target="HxPMgDZnOBgNdD9O4cuE-19" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -123,10 +124,10 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="HxPMgDZnOBgNdD9O4cuE-19" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;ConfirmationToken&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="-60" y="1190" width="180" height="60" as="geometry" />
+          <mxGeometry x="60" y="1080" width="180" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="HxPMgDZnOBgNdD9O4cuE-20" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;click confirm to confirmEndpoint&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="950" y="890" width="160" height="80" as="geometry" />
+        <mxCell id="HxPMgDZnOBgNdD9O4cuE-20" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;click confirm to confirmEndpoint&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="890" y="850" width="190" height="90" as="geometry" />
         </mxCell>
         <mxCell id="HxPMgDZnOBgNdD9O4cuE-21" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0;exitDx=0;exitDy=0;" parent="1" source="HxPMgDZnOBgNdD9O4cuE-2" target="HxPMgDZnOBgNdD9O4cuE-20" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -134,8 +135,8 @@
             <mxPoint x="540" y="1360" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="HxPMgDZnOBgNdD9O4cuE-22" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Registration Controiller&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="1170" y="840" width="120" height="80" as="geometry" />
+        <mxCell id="HxPMgDZnOBgNdD9O4cuE-22" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;Registration Controiller&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1140" y="820" width="140" height="100" as="geometry" />
         </mxCell>
         <mxCell id="HxPMgDZnOBgNdD9O4cuE-23" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="HxPMgDZnOBgNdD9O4cuE-20" target="HxPMgDZnOBgNdD9O4cuE-22" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -143,13 +144,13 @@
             <mxPoint x="770" y="1680" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="HxPMgDZnOBgNdD9O4cuE-24" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;confirm method in registrationService&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="1400" y="830" width="170" height="80" as="geometry" />
+        <mxCell id="HxPMgDZnOBgNdD9O4cuE-24" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;confirm method in registrationService&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1340" y="800" width="220" height="110" as="geometry" />
         </mxCell>
         <mxCell id="HxPMgDZnOBgNdD9O4cuE-25" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;change state to confirm and time confirm return a response entity to FE&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="1710" y="750" width="190" height="90" as="geometry" />
+          <mxGeometry x="1600" y="770" width="190" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="HxPMgDZnOBgNdD9O4cuE-27" value="" style="endArrow=classic;html=1;rounded=0;exitX=1.05;exitY=0.675;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitPerimeter=0;" parent="1" source="HxPMgDZnOBgNdD9O4cuE-22" target="HxPMgDZnOBgNdD9O4cuE-24" edge="1">
+        <mxCell id="HxPMgDZnOBgNdD9O4cuE-27" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.99;exitY=0.401;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitPerimeter=0;" parent="1" source="HxPMgDZnOBgNdD9O4cuE-22" target="HxPMgDZnOBgNdD9O4cuE-24" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="660" y="2110" as="sourcePoint" />
             <mxPoint x="710" y="2060" as="targetPoint" />
@@ -186,7 +187,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="cGs4Bs3RaqLAD1uMJ1Cm-7" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;Login Endpoint&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="630" y="-300" width="250" height="130" as="geometry" />
+          <mxGeometry x="660" y="-200" width="250" height="130" as="geometry" />
         </mxCell>
         <mxCell id="cGs4Bs3RaqLAD1uMJ1Cm-8" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.966;exitY=0.273;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.02;entryY=0.692;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="cGs4Bs3RaqLAD1uMJ1Cm-5" target="cGs4Bs3RaqLAD1uMJ1Cm-7">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -195,7 +196,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="cGs4Bs3RaqLAD1uMJ1Cm-10" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;Login service&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="990" y="-300" width="210" height="105" as="geometry" />
+          <mxGeometry x="960" y="-245" width="210" height="105" as="geometry" />
         </mxCell>
         <mxCell id="cGs4Bs3RaqLAD1uMJ1Cm-12" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="cGs4Bs3RaqLAD1uMJ1Cm-7" target="cGs4Bs3RaqLAD1uMJ1Cm-10">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -217,15 +218,15 @@
             <mxPoint x="1430" y="-410" as="sourcePoint" />
             <mxPoint x="1540" y="-620" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="1180" y="70" />
-              <mxPoint x="940" y="80" />
+              <mxPoint x="1140" y="20" />
+              <mxPoint x="940" y="60" />
               <mxPoint x="780" y="60" />
               <mxPoint x="670" y="20" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="cGs4Bs3RaqLAD1uMJ1Cm-17" value="&lt;font style=&quot;font-size: 36px;&quot;&gt;if not throw in FE&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="790" y="30" width="320" height="30" as="geometry" />
+          <mxGeometry x="740" y="10" width="320" height="30" as="geometry" />
         </mxCell>
         <mxCell id="cGs4Bs3RaqLAD1uMJ1Cm-18" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.411;entryY=-0.036;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="cGs4Bs3RaqLAD1uMJ1Cm-15" target="cGs4Bs3RaqLAD1uMJ1Cm-25">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -236,14 +237,14 @@
         <mxCell id="cGs4Bs3RaqLAD1uMJ1Cm-19" value="&lt;font style=&quot;font-size: 36px;&quot;&gt;IF OK&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="1410" y="-20" width="120" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="cGs4Bs3RaqLAD1uMJ1Cm-22" value="&lt;font style=&quot;font-size: 36px;&quot;&gt;Login Method&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="1160" y="-220" width="290" height="30" as="geometry" />
+        <mxCell id="cGs4Bs3RaqLAD1uMJ1Cm-22" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;Login Method&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="-190" width="200" height="30" as="geometry" />
         </mxCell>
         <mxCell id="cGs4Bs3RaqLAD1uMJ1Cm-25" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;create usernamePasswordAuthToken&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1460" y="80" width="360" height="110" as="geometry" />
+          <mxGeometry x="1380" y="30" width="360" height="110" as="geometry" />
         </mxCell>
         <mxCell id="cGs4Bs3RaqLAD1uMJ1Cm-26" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;authenticate and return Authentication object&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1580" y="220" width="250" height="100" as="geometry" />
+          <mxGeometry x="1510" y="200" width="250" height="100" as="geometry" />
         </mxCell>
         <mxCell id="cGs4Bs3RaqLAD1uMJ1Cm-27" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.539;exitY=1.018;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.4;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="cGs4Bs3RaqLAD1uMJ1Cm-25" target="cGs4Bs3RaqLAD1uMJ1Cm-26">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -252,7 +253,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="cGs4Bs3RaqLAD1uMJ1Cm-28" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;using Auth object to create access/ refresh token&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1560" y="390" width="190" height="130" as="geometry" />
+          <mxGeometry x="1630" y="375" width="190" height="130" as="geometry" />
         </mxCell>
         <mxCell id="cGs4Bs3RaqLAD1uMJ1Cm-29" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.576;exitY=1.04;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="cGs4Bs3RaqLAD1uMJ1Cm-26" target="cGs4Bs3RaqLAD1uMJ1Cm-28">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -261,7 +262,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="cGs4Bs3RaqLAD1uMJ1Cm-30" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;Modify the response to FE&amp;nbsp;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1530" y="620" width="150" height="110" as="geometry" />
+          <mxGeometry x="1650" y="550" width="150" height="110" as="geometry" />
         </mxCell>
         <mxCell id="cGs4Bs3RaqLAD1uMJ1Cm-31" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="cGs4Bs3RaqLAD1uMJ1Cm-28" target="cGs4Bs3RaqLAD1uMJ1Cm-30">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -275,8 +276,8 @@
             <mxPoint x="734" y="1203" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="HxPMgDZnOBgNdD9O4cuE-4" value="&lt;h1&gt;inside mail sent to user&lt;/h1&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="510" y="970" width="160" height="70" as="geometry" />
+        <mxCell id="HxPMgDZnOBgNdD9O4cuE-4" value="&lt;h1&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;inside mail sent to user&lt;/font&gt;&lt;/h1&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="490" y="895" width="120" height="70" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
